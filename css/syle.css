@@ -5,9 +5,21 @@
 }
 
 body {
-    background-color: #fdfdfd;
+    background-color: #f0ebf8;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    color: aqua;
+}
+p, label {
+    color: chocolate;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid #f0ebf8;
+    padding: 10px;
+}
 .cabecalho {
     height: 160px;
     padding: 20px;
