@@ -18,7 +18,7 @@ p, label {
 input {
     border: none;
     border-bottom: 1px solid #f0ebf8;
-    padding: 10px;
+    padding: 10px 0;
 }
 .cabecalho {
     height: 160px;
