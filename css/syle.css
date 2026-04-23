@@ -9,15 +9,16 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: aqua;
+    color: #333;
 }
+
 p, label {
-    color: chocolate;
+    color: #444;
 }
 
 input {
     border: none;
-    border-bottom: 1px solid #f0ebf8;
+    border-bottom: 1px solid #ccc;
     padding: 10px 0;
 }
 
@@ -26,28 +27,27 @@ input[type="text"], input[type="number"], input[type="date"], input[type="file"]
 }
 
 textarea {
-    padding: 10px 5px
+    padding: 10px 5px;
 }
 
 .cabecalho {
     height: 160px;
     padding: 20px;
     background-color: #673ab7;
-}
+} 
 
-.cabecalho h3{
+.cabecalho h3 {
     color: #fff;
     margin-top: 0;
 }
 
 .form-container {
-    background-color: #f0ebf8;
+    background-color: #fdfdfd;
     width: 60%;
     margin: 0 auto;
     position: relative;
     top: -46px;
 }
-
 
 .form-header {
     border-bottom: 1px solid #dfdfdf;
@@ -63,4 +63,55 @@ textarea {
     text-transform: uppercase;
     height: 45px;
     list-style: 45px;
+}
+
+.form-body {
+    padding: 30px;
+}
+
+.titulo-form {
+    margin-bottom: 15px;
+}
+
+.form-body p {
+    margin-bottom: 20px;
+}
+
+.campo-obrigatorio {
+    color: #d80835;
+}
+
+.caixaInputs {
+    margin-bottom: 35px;
+}
+
+.block {
+    display: block;
+}
+
+.caixaOpicional {
+    display: inline-block;
+    margin: 0 30px 0 30px;
+}
+
+.caixaOpicional li {
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+.btn-submit {
+    background-color: #673ab7;
+    color: #fff;
+    border: 2px solid transparent;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0,5s;
+}
+
+.btn-submit:hover {
+    background-color: #fff;
+    color: #673ab7;
+    border-color: #673ab7;
 }
