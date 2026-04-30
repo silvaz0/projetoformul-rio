@@ -121,4 +121,17 @@ hr {
     height: 3px;
     background: linear-gradient(to right, transparent,#673ab7, transparent);
     margin: 20px 0;
+    border: none;
+}
+
+#ListaCarros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    width: 250px;
+
 }

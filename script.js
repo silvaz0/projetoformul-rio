@@ -1,22 +1,24 @@
 function salvarCarro(event) {
     event.preventDefault();
 
-    let titulo = document.getElementById('title'). value;
+    let titulo = document.getElementById('title').value;
     let preco = document.getElementById('preco').value;
     let marca = document.getElementById('marca').value;
-    let modelo = document.getAnimations('modelo').value;
+    let modelo = document.getElementById('modelo').value;
 
-    let cambioSelecionado = document.querySelector('input [name="marcha"]:checked');
+    let cambioSelecionado = document.querySelector('input[name="marcha"]:checked');
 
     let cambio = cambioSelecionado ? cambioSelecionado.id : "Não informado";
 
     let carro = {
+        id: Date.now(),
         titulo,
         preco,
         marca,
         modelo,
-        cambio,
+        cambio
     };
+
 
     let carros = JSON.parse(localStorage.getItem("carros")) || [];
     carros.push(carro);
@@ -33,20 +35,36 @@ function adicionarNaTela(carro) {
     card.classList.add('card');
 
     card.innerHTML = `
+    <img src = "https://picsum.photos/250/150?random = ${math.random()}">
     <h3>${carro.titulo}</h3>
-    <p><strong>Preço:</strong> R${carro.preco}</p>
-    <p><strong>Marca:</strong> R${carro.marca}</p>
-    <p><strong>Modelo:</strong> R${carro.modelo}</p>
-    <p><strong>Cambio:</strong> R${carro.cambio}</p>
+    <p><strong>Preço:</strong> R$ ${carro.preco}</p>
+    <p><strong>Marca:</strong> ${carro.marca}</p>
+    <p><strong>Modelo:</strong> ${carro.modelo}</p>
+    <p><strong>Câmbio:</strong> ${carro.cambio}</p>
+
+    <button onclick = "excluirCarro(${carro.id} ">Excluir</button>
     `
 
     lista.appendChild(card);
 }
 
-window.load = function () {
-    let carros = JSON.parse(localStorage.getItem ('carros')) || [];
+window.onload = function () {
+    let carros = JSON.parse(localStorage.getItem('carros')) || [];
 
-    carros.array.forEach(carro => {
-    adicionarNaTela(carro);    
+    carros.forEach(carro => {
+        adicionarNaTela(carro);
     });
+}
+
+function excluirCarro(id) {
+    let carros = JSON.parse(localStorage.getItem('carros')) || [];
+
+    carros = carros.filter(carro => carro.id !== id);
+
+    localStorage.setItem('carros', JSON.stringify(carros));
+
+    document.getElementById('listaCarros').innerHTML = "";
+
+
+
 }
